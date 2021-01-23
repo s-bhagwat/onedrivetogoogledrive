@@ -46,7 +46,7 @@ const pupDownFunc = async (url) => {
       args: ["--no-sandbox", "--disable-setuid-sandbox"],
     });
     const page = await browser.newPage();
-
+    await page.setDefaultNavigationTimeout(0);
     await page.goto(url, { timeout: 0 });
     await page._client.send("Page.setDownloadBehavior", {
       behavior: "allow",
