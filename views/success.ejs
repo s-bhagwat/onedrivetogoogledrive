@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Upload Video</title>
+  </head>
+  <body>
+    <h1>Hello! <%= name %></h1>
+    <img src="<%= pic %>" alt="" />
+    <form action="/upload" method="POST">
+      <input placeholder="Onedrive Link" type="text" name="link" />
+      <input placeholder="Video File Name" type="text" name="videoName" />
+
+      <input
+        placeholder="Folder Name (must be unique in your drive)"
+        type="text"
+        name="name"
+      />
+      <button>Submit</button>
+    </form>
+  </body>
+</html>
