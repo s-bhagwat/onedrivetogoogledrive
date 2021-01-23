@@ -88,6 +88,7 @@ app.get("/upload", (req, res) => {
   res.redirect("/");
 });
 app.post("/upload", async (req, res) => {
+  res.send("file is downloading");
   //torrent downloading code
   const drive = google.drive({
     version: "v3",
@@ -156,8 +157,6 @@ app.post("/upload", async (req, res) => {
       }
     }
   );
-
-  res.redirect("/");
 });
 
 app.get("/google/callback", (req, res) => {
