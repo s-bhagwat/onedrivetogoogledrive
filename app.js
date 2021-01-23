@@ -149,6 +149,11 @@ app.post("/upload", async (req, res) => {
             (err, data) => {
               if (err) throw err;
               console.log("Done uploading");
+              fs.unlink(path.join("tmp", req.body.videoName), (err) => {
+                if (err) {
+                  console.log(err);
+                }
+              });
             }
           );
         }
